@@ -1,0 +1,13 @@
+RKM CHAT v1.5 — UI CLEAN PASS
+
+Perubahan:
+- Tema UI diarahkan ke gaya iOS modern: permukaan putih, latar lembut, biru aksen, sudut membulat, dan jarak yang lebih konsisten.
+- Feed Pembaruan menampilkan pratinjau foto status langsung saat scroll; tombol Lihat story membuka viewer yang sudah ada.
+- Kartu status, Live, pengaturan, bubble chat, dan composer dirapikan melalui CSS tanpa mengganti API server.
+- Logika kirim pesan, akun, kontak, polling, status, serta API server lama dipertahankan.
+
+Catatan:
+- Pratinjau status video menggunakan kartu play; playback dan viewer tetap mengikuti implementasi yang ada.
+- Live WebRTC tetap bergantung izin kamera/mikrofon, jaringan, dan dukungan browser; ini bukan implementasi ulang setara TikTok.
+- Server Android sudah memakai foreground service START_STICKY dan partial wake lock pada source asal. Android/OEM tetap dapat membatasi proses, jadi uji di perangkat nyata tetap diperlukan.
+- Build APK belum dijalankan di lingkungan ini. Jalankan GitHub Actions untuk membuat APK, lalu uji kirim chat, unggah status, buka status, dan tunnel dari perangkat kedua.

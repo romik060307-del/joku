@@ -1,0 +1,10 @@
+RKM CHAT / SERVER v1.3.0 — CATATAN PEMBARUAN
+
+Paket ini mempertahankan akun, chat teks, kontak, foto, pesan suara, status foto dan panggilan yang lama. Web dalam app/src/main/assets/index.html telah diperbarui untuk mengirim video, lampiran file, status video, dan Live WebRTC.
+
+PENTING:
+- Ukuran maksimum satu media adalah 16 MB; total penyimpanan media baru dibatasi 512 MB.
+- Live adalah koneksi WebRTC peer-to-peer dengan signaling melalui server tablet. Batas uji awal 6 penonton, bukan server relay/SFU untuk jumlah penonton besar.
+- Agar kode baru berjalan, APK server juga harus dibangun ulang. Mengunggah HTML saja tidak memperbarui endpoint server.
+- Ikuti README.md untuk cara mengunggah RKM-Server-Source.zip ke GitHub Actions. Jangan menimpa konfigurasi tunnel port 8080 yang sudah bekerja.
+- Uji menggunakan dua akun pada dua perangkat dan verifikasi upload video, playback, Live join, komentar, stop, dan koneksi ulang.

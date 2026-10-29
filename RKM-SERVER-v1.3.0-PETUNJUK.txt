@@ -1,0 +1,19 @@
+RKM SERVER v1.3.0 — PEMBARUAN SERVER MEDIA & LIVE
+
+1. Perubahan server
+- POST /api/media/upload: menerima unggahan biner streaming ke disk; header X-RKM-Token; Content-Type harus sesuai jenis file.
+- Ukuran maks 16 MB per file. Batas folder media baru 512 MB.
+- GET /api/media?token=...&id=...: media terautentikasi, dukungan HTTP Range untuk playback video.
+- POST /api/live/start, /stop, /join, /leave, /heartbeat.
+- POST /api/live/signal dan GET /api/live/signals: signaling WebRTC offer/answer/ICE.
+- POST /api/live/comment dan GET /api/live/comments.
+- Status video tersimpan via upload media purpose=status.
+
+2. Pasang pada GitHub
+Gunakan RKM-Server-Source.zip, letakkan di root repositori. Workflow build-apk.yml mengenali nama file itu. Commit, lalu jalankan Actions → Build RKM Server APK → Run workflow. Unduh artifact RKM-Server-APK kalau build hijau.
+
+3. Catatan Live
+Live berjalan WebRTC peer-to-peer; tablet hanya mengurus signaling. Implementasi UI membatasi sesi uji 6 penonton. Tidak ada relay video/SFU di APK. Untuk audiens besar diperlukan layanan SFU/TURN terpisah. Pastikan HTTPS, kamera/mikrofon diizinkan, dan jaringan mendukung WebRTC.
+
+4. Server dan data lama
+Port tetap 8080. Path data akun/pesan lama tidak diganti. Media baru berada di folder privat aplikasi rk-media dan tidak otomatis dihapus saat pesan dibersihkan. Simpan cadangan sebelum mengganti APK. Uji pada dua HP sebelum dibagikan ke publik.

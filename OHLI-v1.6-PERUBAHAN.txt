@@ -1,0 +1,22 @@
+OHLI (RKM Chat) v1.6 - TAHAP 1
+
+SERVER
+- Batas penyimpanan media naik dari 512 MB ke 2 GB (per file tetap 16 MB).
+- Service tidak ikut mati saat APK di-swipe dari recent apps (stopWithTask=false) dan dijadwalkan hidup lagi lewat AlarmManager (onTaskRemoved).
+- Tombol matikan tetap satu-satunya cara menghentikan server (selain baterai habis / OS memaksa).
+
+WEB
+- Tampilan gelap gaya WhatsApp iPhone: judul besar, kolom cari, tab bawah (Chat, Kontak, Pembaruan, Panggilan), bubble hijau/abu, composer bulat.
+- Semua ikon utama diganti SVG buatan sendiri (tanpa emoji/stiker) lewat lapisan ohli-icons di akhir index.html.
+- Nama tampilan diganti ke "ohli".
+
+PEMBARUAN (tahap 2)
+- Halaman Pembaruan baru: pilihan tampilan Feed (scroll ke bawah ala FB, foto/video langsung terlihat, video otomatis main saat terlihat), Story (kartu ala IG), Daftar (ala WA). Pilihan tersimpan di perangkat.
+- Viewer story layar penuh: bar progres, ketuk kanan/kiri, tahan untuk jeda, geser ke bawah untuk tutup, balas langsung dari viewer.
+- Siaran Live aktif tampil di atas feed dengan tombol Tonton; ada toast + titik merah di tab Pembaruan saat teman mulai Live.
+- Status baru bisa berisi teks/foto (video status belum ada tombol unggahnya).
+
+BELUM (tahap berikutnya)
+- Pratinjau Live tanpa masuk (butuh server relay/SFU), kirim status video dari UI.
+- Live layar penuh ala TikTok. - Feed IG/TikTok/FB.
+- Uji di perangkat asli (APK belum di-build di lingkungan ini).
